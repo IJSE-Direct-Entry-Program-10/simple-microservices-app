@@ -19,11 +19,11 @@
       <th class="text-center">TITLE</th>
     </tr>
     </thead>
-    <tbody>
-    <tr>
-      <td class="text-center">1234</td>
-      <td class="text-center">Java SE</td>
-    </tr>
+    <tbody *ngFor="let book of bookList">
+      <tr>
+        <td class="text-center">{{book.isbn}}</td>
+        <td class="text-center">{{book.title}}</td>
+      </tr>
     </tbody>
   </table>
 </div>

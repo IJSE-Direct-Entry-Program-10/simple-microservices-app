@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Book} from "./dto/book";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'front-end';
+
+  bookList: Array<Book> = [];
+
+  constructor(private http: HttpClient) {
+    http.get<Array<Book>>('http://localhost:8080/api/v1/books')
+      .subscribe(bookList => this.bookList = bookList);
+  }
 }
