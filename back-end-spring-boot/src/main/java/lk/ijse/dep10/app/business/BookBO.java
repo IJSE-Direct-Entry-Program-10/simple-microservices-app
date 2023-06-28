@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BookBO {
 
-    List<BookDTO> getAllBooks();
+    List<BookDTO> getAllBooks() throws Exception;
 
-    void saveBook(BookDTO bookDTO);
+    void saveBook(BookDTO bookDTO) throws Exception;
 }
